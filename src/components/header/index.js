@@ -10,7 +10,7 @@ const StyledHeader = styled.div`
   display: flex;
   justify-content:center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--page-primary-color);
 
   .container {
     display: flex;

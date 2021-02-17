@@ -2,10 +2,11 @@ import React from 'react';
 import {
   Switch,
   Route,
-  Redirect,
 } from 'react-router-dom';
 
 import Home from './pages/home';
+import Story from './pages/story';
+import Comment from './pages/comment';
 import Ask from './pages/ask';
 import Show from './pages/show';
 import Jobs from './pages/jobs';
@@ -15,6 +16,12 @@ const Router = () => (
   <Switch>
     <Route path="/" exact>
       <Home />
+    </Route>
+    <Route path="/story/:id">
+      <Story />
+    </Route>
+    <Route path="/comment/:id">
+      <Comment />
     </Route>
     <Route path="/ask">
       <Ask />

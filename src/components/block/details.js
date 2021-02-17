@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
-import { timeDifference, formatURL } from '../../lib';
+import { timeDifference } from '../../lib';
 
 const Wrapper = styled.div`
   margin-bottom: ${props => !props.isComment ? '1.5em' : '0'};
@@ -11,10 +11,9 @@ const Wrapper = styled.div`
     font-size: .8em;
     font-weight: normal;
     margin: 0;
-    opacity: .75;
+    opacity: .8;
 
     span {
-      opacity: ${props => props.isComment ? '.75' : '1'};
       margin-right: .6em;
     }
   }

@@ -28,8 +28,13 @@ jobs:
      # Runs a single command using the runners shell
       - name: Install packages
         run: yarn install
-
+        
+     # Runs a single command using the runners shell
+     # Required for now
+      - name: Build react virtualized
+        run: cd ./node_modules/react-virtualized && yarn install && yarn build
+        
       # Runs a single command using the runners shell
-      - name: Run deploy scriot
+      - name: Run deploy script
         run: npm run deploy
 

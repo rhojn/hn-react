@@ -26,7 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cd ./node_modules/react-virtualized; yarn install; yarn build; cd ../../; react-scripts build",
+    "build-react-virtualized": "cd ./node_modules/react-virtualized; yarn install; yarn build",
+    "build": "npm run build-react-virtualized; react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

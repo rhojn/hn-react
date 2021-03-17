@@ -10,11 +10,6 @@ import Feed from '../../components/feed';
 
 const Wrapper = styled.div`
   margin: 2rem 0;
-
-  .ReactVirtualized__Grid {
-    margin-left: -1em;
-    margin-right: -1em;
-  }
 `;
 
 const Home = ({doLoad, ids, type}) => {

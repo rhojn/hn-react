@@ -19,8 +19,7 @@ const ListItem = ({item, isComment}) => {
           <LoaderLine />
           <LoaderLine large />
           <LoaderLineContainer>
-            <LoaderLine mini />
-            <LoaderLine mini />
+            <LoaderLine />
           </LoaderLineContainer>
         </Loader>
       )}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import ThemeToggle from './theme-toggle';
+// import ThemeToggle from './theme-toggle';
 
 const StyledNav = styled.ul`
   list-style: none;
@@ -55,7 +55,7 @@ const Nav = () => {
       {links.map(link => (
         <li key={link.to}><NavLink exact to={link.to}>{link.label}</NavLink></li>
       ))}
-      <li><ThemeToggle /></li>
+      {/* <li><ThemeToggle /></li> */}
     </StyledNav>
   )
 }

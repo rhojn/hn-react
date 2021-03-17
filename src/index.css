@@ -6,22 +6,25 @@
   --primary-dark: #2E3440;
   --secondary-dark: #3B4252;
   --tertiary-dark: #434C5E;
+  --highlight-dark: #4C566A;
   --font-color-dark: #ECEFF4;
-  --box-shadow-dark: rgb(15 17 21 / 25%) 0px 4px 6px, rgb(15 17 21 / 10%) 0px 5px 7px;
+  --box-shadow-dark: rgb(15 17 21 / 25%) 0px 18 40 -12, rgb(15 17 21 / 10%) 0px 20 42 -12;
   /* Light mode */
   --background-light: #F2F4F8;
   --primary-light: #fff;
-  --secondary-dark: #ECEFF4;
-  --tertiary-dark: #E5E9F0;
-  --highlight-dark: #4C566A;
+  --secondary-light: #ECEFF4;
+  --tertiary-light: #E5E9F0;
+  --highlight-light: #4C566A;
   --font-color-light: #4C566A;
-  --box-shadow-light: rgb(184 194 215 / 25%) 0px 4px 6px, rgb(184 194 215 / 10%) 0px 5px 7px;;
+  --box-shadow-light: rgb(184 194 215 / 25%) 0px 18 40 -12, rgb(184 194 215 / 10%) 0px 20 42 -12;
   /* misc colors */
   --page-action-btn: #88C0D0;
   /* Theme color */
   --page-font-color: var(--font-color-dark); /* theme color for font */
   --page-box-shadow: var(--box-shadow-dark); /* theme color for font */
   --page-primary-color: var(--primary-dark); /* theme background color*/
+  --page-secondary-color: var(--secondary-dark); /* theme background color*/
+  --page-tertiary-color: var(--tertiary-dark); /* theme background color*/
   --page-background-color: var(--background-dark); /* theme background color*/
 }
 
@@ -70,4 +73,14 @@ button {
 .ReactVirtualized__Grid,
 .ReactVirtualized__Grid__innerScrollContainer {
   outline: none;
+}
+
+@keyframes loading {
+  0% {
+      background-position: 100% 50%
+  }
+
+  to {
+      background-position: 0 50%
+  }
 }

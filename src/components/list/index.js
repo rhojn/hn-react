@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, memo } from 'react';
 import styled from 'styled-components';
 import { WindowScroller, AutoSizer, List as VList, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
 import { getScrollYFromElementOrWindow, tryUntil} from '../../lib';
@@ -25,7 +25,7 @@ const ScrollTopButton = styled.button`
   }
 `;
 
-const List = ({ count, rowRenderer }) => {
+const List = memo(({ count, rowRenderer }) => {
   const [scrolled, setScrolled] = useState(false);
   const listRef = useRef();
   const scrollToTop = () => {
@@ -73,9 +73,7 @@ const List = ({ count, rowRenderer }) => {
     >
       {({measure, registerChild }) => (
           <div ref={registerChild}
-            style={{...style, 
-              padding: '0 1em'
-            }}>
+            style={{...style}}>
             {rowRenderer(index, isVisible, measure)}
           </div>
         )}
@@ -113,6 +111,6 @@ const List = ({ count, rowRenderer }) => {
     {scrolled && <ScrollTopButton onClick={scrollToTop}>Scroll to top</ScrollTopButton>}
     </>
   )
-}
+})
 
 export default List;

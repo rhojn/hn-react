@@ -27,10 +27,14 @@ const ThemeToggle = () => {
     setDark(!dark);
     const backgroundColor = `var(--background-${dark ? 'light' : 'dark'})`;
     const primaryColor = `var(--primary-${dark ? 'light' : 'dark'})`;
+    const secondaryColor = `var(--secondary-${dark ? 'light' : 'dark'})`;
+    const tertiaryColor = `var(--tertiary-${dark ? 'light' : 'dark'})`;
     const fontColor = `var(--font-color-${dark ? 'light' : 'dark'})`;
     const boxShadow = `var(--box-shadow-${dark ? 'light' : 'dark'})`;
     document.body.style.setProperty("--page-background-color", backgroundColor);
     document.body.style.setProperty("--page-primary-color", primaryColor);
+    document.body.style.setProperty("--page-secondary-color", secondaryColor);
+    document.body.style.setProperty("--page-tertiary-color", tertiaryColor);
     document.body.style.setProperty("--page-font-color", fontColor);
     document.body.style.setProperty("--page-box-shadow", boxShadow);
   }

@@ -4,68 +4,70 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { stories } from '../../store/actions';
 import { storiesTypeSelector } from '../../store/stories/selector';
-import { ReactComponent as ChevronDown } from '../../images/chevron-down.svg';
 
-const SelectWrapper = styled.div`
-  position: relative;
+const ButtonWrapper = styled.div`
   display: inline-block;
-  margin-bottom: 1em;
-  z-index: 1;
-  svg {
-    position: absolute;
-    right: 0;
-    margin: 5px 0.6em;
-    z-index: -1;
-  }
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
 `;
 
-const Select = styled.select`
+const Button = styled.button`
   background-color: transparent;
-  color: var(--page-font-color);
-  border: 1px solid currentColor;
+  color: var(--highlight-dark);
   padding: .5em 1em;
-  border-radius: 4px;
   outline: none;
   font-size: .9em;
   font-weight: 500;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding-right: 2.4em;
   cursor: pointer;
+  border: 2px solid var(--highlight-dark);
 
-  & * {
+  &:not(:last-child):not(.active) {
+    border-right: none;
+  }
+
+  &:hover {
     background-color: var(--page-primary-color);
-    color: var(--page-font-color);
+  }
+
+  &.active {
+    background-color: var(--page-action-btn);
+    border-color: var(--page-action-btn);
+    color: var(--page-primary-color);
+
+    & + button {
+      border-left: none;
+    }
   }
 `;
 
 const Filter = ({type, setType}) => {
   const options = [
     {
-      label: 'Top Stories',
+      label: 'Front',
       value: 'topstories',
     },
     {
-      label: 'New Stories',
+      label: 'New',
       value: 'newstories',
     },
     {
-      label: 'Best Stories',
+      label: 'Best',
       value: 'beststories',
     }
   ]
 
-  const handleSelectChange = e => setType(e.target.value);
+  const handleOnClick = e => {
+    console.log(e);
+    setType(e.target.dataset.value);
+  };
 
   return (
-    <SelectWrapper>
-      <Select value={type} onChange={handleSelectChange}>
-        {options.map(item => (
-          <option value={item.value} key={item.value}>{item.label}</option>
-        ))}
-      </Select>
-      <ChevronDown />
-    </SelectWrapper>
+    <ButtonWrapper>
+      {options.map(item => (
+        <Button key={item.label} onClick={handleOnClick} data-value={item.value} className={type === item.value ? 'active' : ''}>{item.label}</Button>
+      ))}
+    </ButtonWrapper>
   )
 }
 

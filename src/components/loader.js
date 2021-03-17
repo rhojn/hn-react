@@ -12,7 +12,10 @@ export const LoaderLine = styled.div`
   height: ${props => props.large ? '1.2em' : '.9em'};
   margin-top: ${props => props.large ? '.67em' : '0'};
   margin-bottom: ${props => props.large ? '.67em' : '0'};
-  background-color: var(--page-background-color);
+  background: var(--page-background-color);
+  background: linear-gradient(90deg, var(--page-secondary-color) 25%, var(--page-tertiary-color) 37%, var(--page-secondary-color) 63%);
+  background-size: 400% 100%;
+  animation: loading 1.4s ease infinite;
 `;
 
 export const LoaderLineContainer = styled.div`

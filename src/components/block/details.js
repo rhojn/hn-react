@@ -12,9 +12,9 @@ const Wrapper = styled.div`
     font-weight: normal;
     margin: 0;
     opacity: .8;
-
-    span {
-      margin-right: .6em;
+    
+    .dot {
+      margin: 0 .8em;
     }
   }
 
@@ -59,6 +59,7 @@ const Details = memo(({data, isComment, isExpanded}) => (
         {!isComment && 'Posted by '}
         {data.by}
       </span>
+      <span className="dot">&bull;</span>
       <span>{timeDifference(new Date().getTime(), data.time * 1000)}</span>
       {!isExpanded && <span>{(data.kids && data.kids.length) || 0} children</span>}
     </h3>

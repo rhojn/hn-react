@@ -12,11 +12,9 @@ const Wrapper = styled.div`
   margin: 2rem 0;
 `;
 
-const Home = ({doLoad, ids, type}) => {
+const Home = ({ doLoad, ids, type }) => {
   useEffect(() => {
-    const loadStories = async () => {
-      return await doLoad(type, true);
-    };
+    const loadStories = async () => await doLoad(type, true);
     loadStories();
   }, [type, doLoad]);
 

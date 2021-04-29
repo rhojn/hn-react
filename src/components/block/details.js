@@ -5,7 +5,7 @@ import { timeDifference } from '../../lib';
 const Wrapper = styled.div`
   margin-bottom: ${props => !props.isComment ? '1.5em' : '0'};
   color: var(--page-font-color);
-  
+
   h3 {
     color: inherit;
     font-size: .8em;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   h1 {
     color: inherit;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 0;
 
     span {

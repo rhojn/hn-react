@@ -8,11 +8,18 @@ const Content = styled.div`
   background-color: var(--page-primary-color);
   border-radius: 4px;
   box-shadow: ${props => !props.isComment ? 'var(--page-box-shadow)' : 'none'};
+  border: 1px solid var(--page-primary-color);
+
+  
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  
 `;
 
-const Block = memo(({data, link, isComment, isExpanded = true}) => (
+const Block = memo(({ data, link, isComment, isExpanded = true }) => (
   <Content isComment={isComment}>
-    <Details data={data} isComment={isComment} isExpanded={isExpanded}/>
+    <Details data={data} isComment={isComment} isExpanded={isExpanded} />
     {data.type !== 'job' && !isComment && isExpanded && <Actions data={data} link={link} />}
   </Content>
 ))

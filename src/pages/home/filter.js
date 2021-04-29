@@ -41,7 +41,7 @@ const Button = styled.button`
   }
 `;
 
-const Filter = ({type, setType}) => {
+const Filter = ({ type, setType }) => {
   const options = [
     {
       label: 'Front',
@@ -57,10 +57,7 @@ const Filter = ({type, setType}) => {
     }
   ]
 
-  const handleOnClick = e => {
-    console.log(e);
-    setType(e.target.dataset.value);
-  };
+  const handleOnClick = e => setType(e.target.dataset.value);
 
   return (
     <ButtonWrapper>

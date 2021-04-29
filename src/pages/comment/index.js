@@ -19,15 +19,13 @@ const CommentItemWrapper = styled.div`
   padding: 0 ${props => props.nested ? '1.5em' : 0};
 `;
 
-const CommentItem = ({id, nested, doLoad}) => {
+const CommentItem = ({ id, nested, doLoad }) => {
   const story = useSelector(state => getStoryByIDSelector(state, id));
 
   useEffect(() => {
-    const load = async (id) => {
-      await doLoad(id);
-    };
+    const load = async (id) => await doLoad(id);
 
-    if(!story || (story && story.status === 'INITIAL')) {
+    if (!story || (story && story.status === 'INITIAL')) {
       load(id);
     }
   }, [id, story, doLoad]);
@@ -36,10 +34,10 @@ const CommentItem = ({id, nested, doLoad}) => {
     <CommentItemWrapper nested={nested}>
       {story && story.status === 'LOADED' ? (
         <>
-            <CommentBlock data={story.data} isComment />
-            {story && story.data && story.data.kids ? story.data.kids.map(item => (
-              <CommentItem key={item} id={item} doLoad={doLoad} nested />
-            )) : null}
+          <CommentBlock data={story.data} isComment />
+          {story && story.data && story.data.kids ? story.data.kids.map(item => (
+            <CommentItem key={item} id={item} doLoad={doLoad} nested />
+          )) : null}
         </>
       ) : story && story.status === 'ERROR' ? (
         <div>ERROR</div>
@@ -54,7 +52,7 @@ const CommentItem = ({id, nested, doLoad}) => {
   )
 }
 
-const Comment = ({doLoad}) => {
+const Comment = ({ doLoad }) => {
   const { id } = useParams();
   return (
     <Wrapper>
